@@ -1,0 +1,11 @@
+New note in Single page app diagram
+    participant browser
+    participant server
+
+    browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+    activate server
+    Note right of browser: Content-Type: application/json charset=utf-8<br/>{"content": "test","date": "2024-03-24T22:27:50.401Z"}
+    server->>browser: 201 created
+    deactivate server
+
+    Note right of browser: browser executes event handler which displays notes
