@@ -108,7 +108,9 @@ app.get('/info', (request, response) => {
 
 
 
-const PORT = 3001
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`)
-})
+const hostname = "0.0.0.0";
+const port = process.env.port || 3000;
+
+app.listen(port, hostname, () => {
+  console.log(`Server running at http://${hostname}:${port}/`);
+});
